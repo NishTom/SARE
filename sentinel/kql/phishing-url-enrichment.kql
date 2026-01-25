@@ -1,0 +1,23 @@
+// SARE - Phishing URL Enrichment (generic pattern)
+// Inputs:
+//   let url = "https://example.com/login";
+//   let startTime = ago(48h);
+//   let endTime = now();
+
+let url = "https://example.com/login";
+let startTime = ago(48h);
+let endTime = now();
+
+// If you use Defender for Office 365 / URL-related signals in Sentinel,
+// adjust tables based on your environment (e.g., EmailUrlInfo, CloudAppEvents, etc.).
+CloudAppEvents
+| where TimeGenerated between (startTime .. endTime)
+| where tostring(RawEventData) has url
+| project
+    TimeGenerated,
+    AccountDisplayName,
+    IPAddress,
+    Application,
+    ActionType,
+    RawEventData
+| order by TimeGenerated desc

@@ -1,0 +1,29 @@
+// SARE - Risky Sign-in Enrichment
+// Inputs:
+//   let userUpn = "user@domain.com";
+//   let startTime = ago(24h);
+//   let endTime = now();
+
+let userUpn = "user@domain.com";
+let startTime = ago(24h);
+let endTime = now();
+
+SigninLogs
+| where TimeGenerated between (startTime .. endTime)
+| where UserPrincipalName =~ userUpn
+| project
+    TimeGenerated,
+    UserPrincipalName,
+    AppDisplayName,
+    ClientAppUsed,
+    AuthenticationRequirement,
+    ConditionalAccessStatus,
+    Status,
+    IPAddress,
+    Location,
+    DeviceDetail,
+    RiskLevelDuringSignIn,
+    RiskState,
+    RiskDetail,
+    CorrelationId
+| order by TimeGenerated desc
