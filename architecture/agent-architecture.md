@@ -1,5 +1,8 @@
 # Agent Architecture
 
+> **HISTORICAL.** Superseded by current-state.md §4. Retained
+> for decision history. Do not treat as current.
+
 This document defines how AI agents are used within SARE, what responsibilities they hold, and the constraints under which they operate.
 
 SARE uses **assistive, bounded agents** — not autonomous actors — to ensure safety, explainability, and governance.

@@ -1,5 +1,8 @@
 # SARE Case Model
 
+> **HISTORICAL.** Superseded by current-state.md §7. Retained
+> for decision history. Do not treat as current.
+
 This document defines the normalized “case model” used by SARE to represent an investigation consistently across signals and tooling.
 
 ## Why a Case Model
