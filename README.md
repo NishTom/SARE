@@ -1,4 +1,4 @@
-# SARE — Sentinel Autonomous Response Engine
+# SARE — Security Autonomy Reasoning Engine
 
 SARE is a documentation-first architecture for building AI-assisted security detection triage and response on top of Microsoft Sentinel.
 
